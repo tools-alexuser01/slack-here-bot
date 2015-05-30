@@ -5,12 +5,10 @@ var token = process.env.HUBOT_SLACK_TOKEN;
 
 var slack = new Slack(token, true, true);
 
-var makeMention = function(userId) {
-  return '<@' + userId + '>';
-};
+var here = require('./here.js');
 
 var isDirect = function(userId, messageText) {
-  var userTag = makeMention(userId);
+  var userTag = here.makeMention(userId);
   // console.log(userId, messageText, userTag);
   return messageText &&
          messageText.length >= userTag.length &&
@@ -60,7 +58,7 @@ slack.on('message', function(message) {
 
       var onlineUsers = getOnlineHumansForChannel(channel)
           .filter(function(u) { return u.id != user.id; })
-          .map(function(u) { return makeMention(u.id); });
+          .map(function(u) { return here.makeMention(u.id); });
 
       channel.send(onlineUsers.join(', ') + '\r\n' + user.real_name + ' said: ' + trimmedMessage);
     }

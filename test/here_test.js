@@ -30,11 +30,14 @@ describe('test match string', function() {
   it('should match @herebot message', function() {
     assert.isNotNull(here.matchString('test string @herebot'));
   });
-  it('should match @here message', function() {
+  it('should not match @here message', function() {
     assert.isNull(here.matchString('`@here` test string'));
   });
-  it('should match @herebot message', function() {
+  it('should not match @herebot message', function() {
     assert.isNull(here.matchString('test string `@herebot`'));
+  });
+  it('should not match some here in message', function() {
+    assert.isNull(here.matchString('test string is here'));
   });
 });
 

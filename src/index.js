@@ -7,14 +7,6 @@ var slack = new Slack(token, true, true);
 
 var here = require('./here.js');
 
-var isDirect = function(userId, messageText) {
-  var userTag = here.makeMention(userId);
-  // console.log(userId, messageText, userTag);
-  return messageText &&
-         messageText.length >= userTag.length &&
-         messageText.substr(0, userTag.length) === userTag;
-};
-
 var getOnlineHumansForChannel = function(channel) {
   if (!channel) return [];
 

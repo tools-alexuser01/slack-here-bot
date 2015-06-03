@@ -44,14 +44,11 @@ slack.on('message', function(message) {
   var user = slack.getUserByID(message.user);
 
   if (message.type === 'message') {
-    var match = message.text.match(/@here/);
-    if (match !== null) {
-      var trimmedMessage = message.text.replace(/@here/, '');
-
+    var trimmedMessage = here.listen(message.text);
+    if (trimmedMessage !== null) {
       var onlineUsers = getOnlineHumansForChannel(channel)
           .filter(function(u) { return u.id != user.id; })
           .map(function(u) { return here.makeMention(u.id); });
-
       channel.send(onlineUsers.join(', ') + '\r\n' + user.real_name + ' said: ' + trimmedMessage);
     }
   }

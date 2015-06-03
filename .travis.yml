@@ -1,8 +1,11 @@
 sudo: false
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
-  - "iojs"
+- '0.10'
+- '0.12'
+- iojs
 script:
-  - npm test
+- npm test
+notifications:
+  slack:
+    secure: oypn5tcSYXFl1K5CdCeNOiGthz9k6c3aOH+kET6G5Dz+01Bpc2B6sFY5ebpwk0pO6IT7ANkMTl/VjexEXqvkIN1Vsm0f/edSMCpXlbpd2rEMa+oW66Xi9rQGRc3Nfe29Jp72B44Yin3zwQC4qHR91QIGwDnVGx8TFVMh6WFfs/mua9uuuUso2IGAyu/6/ng6MqiShq92i0ftvLGsJWlQRM5izj7tJa3qpjSO/a1kE9xDCJrfcbqA+So1CcLalYSNYHL6J187PB/wZxkEDYAwerY0P1rQVdBGd2iw//Sj8+oi3IStKRIKukDgmLd3vDHXir+ZE+8CSnCgjDKip4HBqPWF8SZJySpNB6rJOsMoD80OikoWMsKFaT/LZed+ns0zVAWnz5OMOmhh7tSe4t9WVeDx45zt4skVEwQug7lJVcsuron1vH3CdZ0BWnHgewqq6c8DQMxlWhMUyYxuuY0rwVr7L1IH8MmMK7hpblmKSBbQT/w99Sl/PLl+frtSoHPC8mYTmV18oIcNVo/OX4niG+R/7So6cy2LEpxqRKFsdaV60CdarGrjC72O49rINFzlTHrLZdNTsa9zOMCRBfTeE9yiBPYdovhU1v4+bj75h16XB7S1pSCGVToO0iDgFHkZbExlpGMbI7I01GJw+hoJvRuXpnaoifPFy6HYWAhcBfU=

@@ -37,3 +37,18 @@ describe('test match string', function() {
     assert.isNull(here.matchString('test string `@herebot`'));
   });
 });
+
+describe('test replace string', function(){
+  it('should replace @here message', function() {
+    assert.equal('test string', here.trimString('@here test string'));
+  });
+  it('should replace @herebot message', function() {
+    assert.equal('test string', here.trimString('@herebot test string'));
+  });
+  it('should replace @here message', function() {
+    assert.equal('test string', here.trimString('test string @here'));
+  });
+  it('should replace @herebot message', function() {
+    assert.equal('test string', here.trimString('test string @herebot'));
+  });
+});

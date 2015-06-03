@@ -9,7 +9,7 @@ exports.isDirect = function(userId, messageText) {
          messageText.substr(0, userTag.length) === userTag;
 };
 
-var hereString = new RegExp('(^|[^`])(@here)', 'ig');
+var hereString = new RegExp('(^|[^`])(@here)(bot)?', 'ig');
 
 exports.matchString = function(message) {
   if (message) {
@@ -20,7 +20,7 @@ exports.matchString = function(message) {
 
 exports.trimString = function(message) {
   if (message) {
-    return message.replace(hereString, '');
+    return message.replace(hereString, '').trim();
   }
   return null;
 };

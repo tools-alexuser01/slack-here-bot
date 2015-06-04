@@ -49,7 +49,7 @@ slack.on('message', function(message) {
       var onlineUsers = getOnlineHumansForChannel(channel)
           .filter(function(u) { return u.id != user.id; })
           .map(function(u) { return here.makeMention(u.id); });
-      channel.send(onlineUsers.join(', ') + '\r\n' + user.real_name + ' said: ' + trimmedMessage);
+      channel.send(trimmedMessage + '\r\nSaid by ' + here.makeMention(user.id) + ' /cc' + onlineUsers.join(', '));
     }
   }
 });

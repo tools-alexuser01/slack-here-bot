@@ -1,10 +1,14 @@
 # Slack bot
 
+[![Build Status](https://travis-ci.org/apiaryio/slack-here-bot.svg?branch=master)](https://travis-ci.org/apiaryio/slack-here-bot)
+
 Based on http://blog.somewhatabstract.com/2015/03/02/writing-a-simple-slack-bot-with-node-slack-client/
 
 ## Using
 
-Implementation `@here` similar to `hipchat` for slack.
+Implementation `@here` similar to `hipchat` for slack. Bot has namae `@herebot` (@here is reserved name).
+
+You can use `@here My message` or use `@herebot My message` and all online users will be notify by `@herebot`.
 
 ## Testing
 
